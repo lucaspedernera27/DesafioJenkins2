@@ -15,14 +15,14 @@ pipeline {
         } 
         stage('Git Clone') {
             steps {
-                sh 'rm -rf static-website/'
-                sh 'git clone https://github.com/roxsross/static-website.git'
-                sh 'ls -lrt static-website/'
+                sh 'rm -rf DesafioJenkins2/'
+                sh 'git clone https://github.com/lucaspedernera27/DesafioJenkins2.git'
+                sh 'ls -lrt DesafioJenkins2/'
             }
         } 
         stage('Upload to S3') {
             steps {
-                sh 'aws s3 cp static-website s3://leandroooo --recursive'
+                sh 'aws s3 cp DesafioJenkins2 s3://bucketjenkinslp --recursive'
             }
         }         
     }
